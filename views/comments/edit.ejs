@@ -1,0 +1,25 @@
+<%- include ("../partials/header") %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Edit</h1>
+        <div style="width:30%; margin: 30px auto;">
+            <!-- margin: 0 on top, bottom
+                        auto on left, right -->
+            <form action="/campgrounds/<%=campground_id %>/comments/<%=comment._id%>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <!-- form-group: group things together,spacing between input, each input is placed in each group -->
+                    <input class="form-control" type="text" name="comment[text]" value="<%=comment.text%>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                    <!-- btn-block: make the button the block element -->
+                </div>
+
+            </form>
+            <a href="/campgrounds">Go back</a>
+        </div>
+
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
